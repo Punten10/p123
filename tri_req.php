@@ -80,9 +80,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
    
   }
   
-  function claim($bearer,$id,$id1)
+  function claim($bearer,$id,$id2)
   {
-    $body = array("rewardId"=>$id1,"rewardTransactionId"=>$id);
+    $body = array("rewardId"=>$id2,"rewardTransactionId"=>$id);
     $body = json_encode($body);
     $ctl = strlen($body);
     $header = array("Host:bonstri.tri.co.id" ,
@@ -98,6 +98,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
  "Accept-Language:id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7");
      $response = $this->curls("http://bonstri.tri.co.id/api/v1/voucherku/get-voucher-code",$header,$body,"POST");
      return $response[1];
+ 
   }
   
   
